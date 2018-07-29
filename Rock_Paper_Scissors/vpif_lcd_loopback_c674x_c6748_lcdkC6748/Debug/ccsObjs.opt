@@ -1,0 +1,1 @@
+"./vpif_lcd_loopback.obj" "./tvp5147.obj" "./i2cgpio.obj" "./codecif.obj" "./cdce913.obj" "./cbcr422sp_to_rgb565_dsp.obj" "./adv7343.obj" "../vpif_lcd_loopback.cmd" -l"libc.a" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib 

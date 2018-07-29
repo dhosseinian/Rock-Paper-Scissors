@@ -1,0 +1,979 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.4.4                      
+******************************************************************************
+>> Linked Tue Jun 05 15:53:41 2018
+
+OUTPUT FILE NAME:   <vpif_lcd_loopback.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: c0326c00
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  L2                    11800000   00040000  00000000  00040000  RWIX
+  L1P                   11e00000   00008000  00000000  00008000  RWIX
+  L1D                   11f00000   00008000  00000000  00008000  RWIX
+  DDR2                  c0000000   08000000  003bceba  07c43146  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+c0000000    c0000000    0028352c   0028352c    rw-
+  c0000000    c0000000    0028352c   0028352c    rw- .far
+c0283530    c0283530    00096638   00096638    rw-
+  c0283530    c0283530    000965dc   000965dc    rw- .fardata
+  c0319b0c    c0319b0c    0000005c   0000005c    rw- .neardata
+c0319b68    c0319b68    00000008   00000008    r--
+  c0319b68    c0319b68    00000008   00000008    r-- .rodata
+c0319b70    c0319b70    00000050   00000000    rw-
+  c0319b70    c0319b70    00000050   00000000    rw- .bss
+c0319bc0    c0319bc0    00000038   00000038    r--
+  c0319bc0    c0319bc0    00000038   00000038    r-- .switch
+c0319c00    c0319c00    0000ace0   0000ace0    r-x
+  c0319c00    c0319c00    0000ace0   0000ace0    r-x .text
+c03248e0    c03248e0    00002000   00000000    rw-
+  c03248e0    c03248e0    00001000   00000000    rw- .stack
+  c03258e0    c03258e0    00001000   00000000    rw- .sysmem
+c03268e0    c03268e0    0000000a   0000000a    r--
+  c03268e0    c03268e0    0000000a   0000000a    r-- .const
+c0326c00    c0326c00    00000080   00000080    r-x
+  c0326c00    c0326c00    00000080   00000080    r-x .text:_c_int00
+c0326c80    c0326c80    00096000   00000000    rw-
+  c0326c80    c0326c80    00096000   00000000    rw- .EXT_RAM
+c03bcc80    c03bcc80    0000055c   0000055c    r--
+  c03bcc80    c03bcc80    0000055c   0000055c    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    c0000000    00000000     UNINITIALIZED
+
+.far       0    c0000000    0028352c     
+                  c0000000    002832dc     vpif_lcd_loopback.obj (.far) [fill = 0]
+                  c02832dc    00000004     --HOLE--
+                  c02832e0    00000240     system_config.lib : interrupt.obj (.far) [fill = 0]
+                  c0283520    0000000c     codecif.obj (.far) [fill = 0]
+
+.fardata   0    c0283530    000965dc     
+                  c0283530    00025800     vpif_lcd_loopback.obj (.fardata:p1_filtered)
+                  c02a8d30    00025800     vpif_lcd_loopback.obj (.fardata:p2_filtered)
+                  c02ce530    00025800     vpif_lcd_loopback.obj (.fardata:player1)
+                  c02f3d30    00025800     vpif_lcd_loopback.obj (.fardata:player2)
+                  c0319530    000001c0     vpif_lcd_loopback.obj (.fardata:IW1_1)
+                  c03196f0    00000054     vpif_lcd_loopback.obj (.fardata:LW2_1)
+                  c0319744    00000004     rts6740_elf.lib : errno.obj (.fardata)
+                  c0319748    00000040     vpif_lcd_loopback.obj (.fardata:gain)
+                  c0319788    00000040     vpif_lcd_loopback.obj (.fardata:p1_features)
+                  c03197c8    00000040     vpif_lcd_loopback.obj (.fardata:p2_features)
+                  c0319808    00000040     vpif_lcd_loopback.obj (.fardata:xoffset)
+                  c0319848    00000024     vpif_lcd_loopback.obj (.fardata:P)
+                  c031986c    00000004     --HOLE--
+                  c0319870    00000024     vpif_lcd_loopback.obj (.fardata:R)
+                  c0319894    00000004     --HOLE--
+                  c0319898    00000024     vpif_lcd_loopback.obj (.fardata:S)
+                  c03198bc    00000004     --HOLE--
+                  c03198c0    00000023     vpif_lcd_loopback.obj (.fardata:eight)
+                  c03198e3    00000005     --HOLE--
+                  c03198e8    00000023     vpif_lcd_loopback.obj (.fardata:five)
+                  c031990b    00000005     --HOLE--
+                  c0319910    00000023     vpif_lcd_loopback.obj (.fardata:four)
+                  c0319933    00000005     --HOLE--
+                  c0319938    00000023     vpif_lcd_loopback.obj (.fardata:nine)
+                  c031995b    00000005     --HOLE--
+                  c0319960    00000023     vpif_lcd_loopback.obj (.fardata:one)
+                  c0319983    00000005     --HOLE--
+                  c0319988    00000023     vpif_lcd_loopback.obj (.fardata:seven)
+                  c03199ab    00000005     --HOLE--
+                  c03199b0    00000023     vpif_lcd_loopback.obj (.fardata:six)
+                  c03199d3    00000005     --HOLE--
+                  c03199d8    00000023     vpif_lcd_loopback.obj (.fardata:three)
+                  c03199fb    00000005     --HOLE--
+                  c0319a00    00000023     vpif_lcd_loopback.obj (.fardata:two)
+                  c0319a23    00000005     --HOLE--
+                  c0319a28    00000023     vpif_lcd_loopback.obj (.fardata:zero)
+                  c0319a4b    00000005     --HOLE--
+                  c0319a50    00000020     vpif_lcd_loopback.obj (.fardata:iOffset)
+                  c0319a70    00000020     vpif_lcd_loopback.obj (.fardata:jOffset)
+                  c0319a90    0000001c     vpif_lcd_loopback.obj (.fardata:b1)
+                  c0319aac    00000004     --HOLE--
+                  c0319ab0    00000018     rts6740_elf.lib : exp.obj (.fardata:P$1)
+                  c0319ac8    00000018                     : exp.obj (.fardata:Q$2)
+                  c0319ae0    0000000c     vpif_lcd_loopback.obj (.fardata:b2)
+                  c0319aec    0000000c     rts6740_elf.lib : exit.obj (.fardata)
+                  c0319af8    0000000c                     : memory.obj (.fardata)
+                  c0319b04    00000008                     : _lock.obj (.fardata)
+
+.neardata 
+*          0    c0319b0c    0000005c     
+                  c0319b0c    00000040     vpif_lcd_loopback.obj (.neardata)
+                  c0319b4c    00000014     cbcr422sp_to_rgb565_dsp.obj (.neardata)
+                  c0319b60    00000008     codecif.obj (.neardata)
+
+.rodata    0    c0319b68    00000008     
+                  c0319b68    00000008     vpif_lcd_loopback.obj (.rodata)
+
+.bss       0    c0319b70    00000050     UNINITIALIZED
+                  c0319b70    0000004c     vpif_lcd_loopback.obj (.bss)
+                  c0319bbc    00000004     codecif.obj (.bss)
+
+.switch    0    c0319bc0    00000038     
+                  c0319bc0    00000028     vpif_lcd_loopback.obj (.switch:updateDisplayScore)
+                  c0319be8    00000010     drivers.lib : gpio.obj (.switch:GPIOIntTypeSet)
+
+.text      0    c0319c00    0000ace0     
+                  c0319c00    00001d40     drivers.lib : vpif.obj (.text)
+                  c031b940    00001a40     system_config.lib : interrupt.obj (.text:retain)
+                  c031d380    00001860     vpif_lcd_loopback.obj (.text)
+                  c031ebe0    00001280     cbcr422sp_to_rgb565_dsp.obj (.text:intrinsic)
+                  c031fe60    00000de0     drivers.lib : raster.obj (.text)
+                  c0320c40    000005e0     system_config.lib : interrupt.obj (.text)
+                  c0321220    000005a0     rts6740_elf.lib : divd.obj (.text:__c6xabi_divd)
+                  c03217c0    00000580     drivers.lib : gpio.obj (.text)
+                  c0321d40    000004c0                 : i2c.obj (.text)
+                  c0322200    00000460     codecif.obj (.text)
+                  c0322660    00000420     system_config.lib : cache.obj (.text)
+                  c0322a80    00000280     rts6740_elf.lib : divf.obj (.text:__c6xabi_divf)
+                  c0322d00    00000240                     : exp.obj (.text:exp)
+                  c0322f40    00000240     platform.lib : lcd.obj (.text)
+                  c0323180    000001a0     tvp5147.obj (.text)
+                  c0323320    000000e0     rts6740_elf.lib : divi.obj (.text:__divi)
+                  c0323400    00000200     system_config.lib : intvecs.obj (.text)
+                  c0323600    00000180     rts6740_elf.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  c0323780    00000180                     : ldexp.obj (.text:ldexp)
+                  c0323900    00000180                     : memory.obj (.text:malloc)
+                  c0323a80    00000140     drivers.lib : psc.obj (.text)
+                  c0323bc0    00000100     rts6740_elf.lib : autoinit.obj (.text:_auto_init_elf)
+                  c0323cc0    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  c0323dc0    00000100     platform.lib : vpif.obj (.text)
+                  c0323ec0    000000e0     rts6740_elf.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  c0323fa0    000000c0                     : divu.obj (.text:__divu)
+                  c0324060    000000c0                     : remi.obj (.text:__remi)
+                  c0324120    000000c0                     : exit.obj (.text:exit)
+                  c03241e0    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
+                  c03242a0    000000a0                     : remu.obj (.text:__remu)
+                  c0324340    000000a0                     : memory.obj (.text:_minit)
+                  c03243e0    000000a0                     : memcpy64.obj (.text:memcpy)
+                  c0324480    000000a0                     : memory.obj (.text:minsert)
+                  c0324520    000000a0                     : modf.obj (.text:modf)
+                  c03245c0    000000a0                     : memory.obj (.text:mremove)
+                  c0324660    000000a0     platform.lib : i2c.obj (.text)
+                  c0324700    00000060     rts6740_elf.lib : cpp_init.obj (.text:__TI_cpp_init)
+                  c0324760    00000040                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
+                  c03247a0    00000040                     : llshift.obj (.text:__c6xabi_llshru)
+                  c03247e0    00000040                     : args_main.obj (.text:_args_main)
+                  c0324820    00000020                     : errno.obj (.text:__c6xabi_errno_addr)
+                  c0324840    00000020                     : trunc.obj (.text:__c6xabi_trunc)
+                  c0324860    00000020                     : _lock.obj (.text:_nop)
+                  c0324880    00000020                     : exit.obj (.text:abort)
+                  c03248a0    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  c03248c0    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+
+.stack     0    c03248e0    00001000     UNINITIALIZED
+                  c03248e0    00000008     rts6740_elf.lib : boot.obj (.stack)
+                  c03248e8    00000ff8     --HOLE--
+
+.sysmem    0    c03258e0    00001000     UNINITIALIZED
+                  c03258e0    00000008     rts6740_elf.lib : memory.obj (.sysmem)
+                  c03258e8    00000ff8     --HOLE--
+
+.const     0    c03268e0    0000000a     
+                  c03268e0    0000000a     vpif_lcd_loopback.obj (.const:ccCoeff)
+
+.text:_c_int00 
+*          0    c0326c00    00000080     
+                  c0326c00    00000080     rts6740_elf.lib : boot.obj (.text:_c_int00)
+
+.EXT_RAM   0    c0326c80    00096000     UNINITIALIZED
+                  c0326c80    00096000     vpif_lcd_loopback.obj (.EXT_RAM)
+
+.cinit     0    c03bcc80    0000055c     
+                  c03bcc80    000004bc     (.cinit..fardata.load) [load image, compression = rle]
+                  c03bd13c    00000034     (.cinit..neardata.load) [load image, compression = rle]
+                  c03bd170    0000000e     (.cinit..rodata.load) [load image, compression = rle]
+                  c03bd17e    00000002     --HOLE-- [fill = 0]
+                  c03bd180    0000000d     (.cinit..far.load) [load image, compression = rle]
+                  c03bd18d    00000003     --HOLE-- [fill = 0]
+                  c03bd190    0000000c     (__TI_handler_table)
+                  c03bd19c    00000008     (.cinit..EXT_RAM.load) [load image, compression = zero_init]
+                  c03bd1a4    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  c03bd1ac    00000030     (__TI_cinit_table)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ c03bd1ac records: 6, size/record: 8, table size: 48
+	.fardata: load addr=c03bcc80, load size=000004bc bytes, run addr=c0283530, run size=000965dc bytes, compression=rle
+	.neardata: load addr=c03bd13c, load size=00000034 bytes, run addr=c0319b0c, run size=0000005c bytes, compression=rle
+	.rodata: load addr=c03bd170, load size=0000000e bytes, run addr=c0319b68, run size=00000008 bytes, compression=rle
+	.far: load addr=c03bd180, load size=0000000d bytes, run addr=c0000000, run size=0028352c bytes, compression=rle
+	.EXT_RAM: load addr=c03bd19c, load size=00000008 bytes, run addr=c0326c80, run size=00096000 bytes, compression=zero_init
+	.bss: load addr=c03bd1a4, load size=00000008 bytes, run addr=c0319b70, run size=00000050 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ c03bd190 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+c031de58   BFS
+c0324880   C$$EXIT
+c0322960   CacheDisableMAR
+c03227e8   CacheEnable
+c03228c8   CacheEnableMAR
+c0322a14   CacheInv
+c03229ec   CacheInvL1pAll
+c0322a30   CacheWB
+c03229f8   CacheWBAll
+c0322a4c   CacheWBInv
+c0322a08   CacheWBInvAll
+c03225e0   CodecRegBitClr
+c0322568   CodecRegBitSet
+c0322520   CodecRegRead
+c0322488   CodecRegWrite
+c03224cc   CodecRegWrite3
+c0323088   ConfigRasterDisplayEnable
+c0323034   ConfigRasterGpioPins
+c0321098   ExcCombineAdd
+c03210e0   ExcCombineRemove
+c0321078   ExcGlobalEnable
+c0321c64   GPIOBankIntDisable
+c0321c34   GPIOBankIntEnable
+c0321c90   GPIOBankPinsWrite
+c0321858   GPIODirModeGet
+c03217c0   GPIODirModeSet
+c0321b04   GPIOIntTypeGet
+c0321998   GPIOIntTypeSet
+c0321bec   GPIOPinIntClear
+c0321b8c   GPIOPinIntStatus
+c0321938   GPIOPinRead
+c03218b8   GPIOPinWrite
+c0322238   I2CCodecIfInit
+c03221c4   I2CDMARxEventDisable
+c0322178   I2CDMARxEventEnable
+c03221a0   I2CDMATxEventDisable
+c0322154   I2CDMATxEventEnable
+c0322140   I2CDMATxRxEventDisable
+c0322108   I2CInterruptVectorGet
+c0321f68   I2CMasterBusBusy
+c0321fb0   I2CMasterControl
+c0322080   I2CMasterDataGet
+c0322058   I2CMasterDataPut
+c0321e18   I2CMasterDisable
+c0321de0   I2CMasterEnable
+c0322030   I2CMasterErr
+c0321d40   I2CMasterInitExpClk
+c0321f24   I2CMasterIntClearEx
+c0321e84   I2CMasterIntDisableEx
+c0321e38   I2CMasterIntEnableEx
+c0321ecc   I2CMasterIntStatus
+c0321f8c   I2CMasterIsBusy
+c0321f50   I2CMasterSlaveAddrSet
+c0321fd8   I2CMasterStart
+c0321ff8   I2CMasterStop
+c03220f0   I2COwnAddressSet
+c0324660   I2CPinMuxSetup
+c03220d8   I2CSetDataCount
+c0322124   I2CSlaveAddressGet
+c03220c0   I2CSlaveDataGet
+c0322098   I2CSlaveDataPut
+c0321f38   I2CSlaveIntClearEx
+c0321ea8   I2CSlaveIntDisableEx
+c0321e60   I2CSlaveIntEnableEx
+c0321ee8   I2CSlaveIntStatus
+c0321f04   I2CSlaveIntStatusEx
+c0322018   I2CStatusClear
+c0319530   IW1_1
+c0320c40   IntDSPINTCInit
+c0320ff0   IntDisable
+c0320fc0   IntEnable
+c0320db8   IntEventClear
+c0320ef4   IntEventCombineAdd
+c0320df0   IntEventCombineInit
+c0320f98   IntEventCombineRegister
+c0320f48   IntEventCombineRemove
+c0320cfc   IntEventMap
+c0320d84   IntEventSet
+c032104c   IntGlobalDisable
+c0321038   IntGlobalEnable
+c0321060   IntGlobalRestore
+c0320cb0   IntRegister
+c0321024   IntReset
+c0320cd4   IntUnRegister
+c0322f40   LCDPinMuxSetup
+c032316c   LCDVersionGet
+c03196f0   LW2_1
+c0319848   P
+c0323a80   PSCModuleControl
+c0319870   R
+c0319ba8   RPS_disp_p1
+c0319bac   RPS_disp_p2
+c031fed4   RasterAutoUnderFlowDisable
+c031feb4   RasterAutoUnderFlowEnable
+c0320408   RasterByteSwapDisable
+c03203e4   RasterByteSwapEnable
+c0320594   RasterClearGetIntStatus
+c031fe60   RasterClkConfig
+c03207f4   RasterClocksEnable
+c0320b30   RasterContextRestore
+c0320a48   RasterContextSave
+c03203a8   RasterDMAConfig
+c032054c   RasterDMAFBConfig
+c0320880   RasterDMASoftWareClkDisable
+c0320858   RasterDMASoftWareClkEnable
+c031ff18   RasterDisable
+c03209a4   RasterDmaMasterPrioritySet
+c031fef4   RasterEnable
+c0320450   RasterEndOfFrameIntDisable
+c032042c   RasterEndOfFrameIntEnable
+c0320988   RasterEndOfInterrupt
+c0320120   RasterFIFODMADelayConfig
+c0320168   RasterHparamConfig
+c031fea0   RasterIdGet
+c0320a04   RasterIdleModeConfig
+c0320088   RasterIntDisable
+c0320020   RasterIntEnable
+c03204d4   RasterIntRawStatus
+c0320520   RasterIntRawStatusSet
+c0320474   RasterIntStatus
+c031ffe0   RasterLSBDataOrderSelect
+c0320000   RasterMSBDataOrderSelect
+c031ff40   RasterModeConfig
+c0320100   RasterNibbleModeDisable
+c03200e0   RasterNibbleModeEnable
+c0320834   RasterSoftWareClkDisable
+c0320810   RasterSoftWareClkEnable
+c0320914   RasterSoftWareResetControlDisable
+c03208a4   RasterSoftWareResetControlEnable
+c03209c0   RasterStandbyModeConfig
+c0320650   RasterSubPanelConfig
+c032062c   RasterSubPanelDisable
+c032060c   RasterSubPanelEnable
+c0320334   RasterTiming2Configure
+c0320244   RasterVparamConfig
+c0157210   Rgb_buffer1
+c01ed230   Rgb_buffer2
+c0319898   S
+c0319b34   SWITCH
+c03231a8   TVP5147CompositeInit
+c0323288   TVP5147SVideoInit
+c031a120   VPIFCaptureCapmodeModeSelect
+c031a1b0   VPIFCaptureChanenDisable
+c031a170   VPIFCaptureChanenEnable
+c0319d80   VPIFCaptureClkedgeModeSelect
+c031a660   VPIFCaptureFBConfig
+c031a7a4   VPIFCaptureFBExchange
+c031a074   VPIFCaptureFidModeRead
+c0319ec8   VPIFCaptureFieldframeModeSelect
+c0319fec   VPIFCaptureHancDisable
+c0319fb4   VPIFCaptureHancEnable
+c031a024   VPIFCaptureIntframeConfig
+c0319ef4   VPIFCaptureIntrprogModeSelect
+c031a540   VPIFCaptureModeConfig
+c0319dd0   VPIFCaptureRawDatawidthConfig
+c0319e40   VPIFCaptureRawFidinvSet
+c0319e98   VPIFCaptureRawHvinvSet
+c0319e00   VPIFCaptureRawIntlineConfig
+c0319e6c   VPIFCaptureRawVvinvSet
+c031a1f0   VPIFCaptureVBIFBConfig
+c031a358   VPIFCaptureVBIFBExchange
+c0319f80   VPIFCaptureVancDisable
+c0319f48   VPIFCaptureVancEnable
+c031a0cc   VPIFCaptureYcmuxModeSelect
+c0319d50   VPIFDMARequestSizeConfig
+c031aec8   VPIFDisplayChanenDisable
+c031ae78   VPIFDisplayChanenEnable
+c031aa00   VPIFDisplayClipancDisable
+c031a9b8   VPIFDisplayClipancEnable
+c031aa88   VPIFDisplayClipvidDisable
+c031aa44   VPIFDisplayClipvidEnable
+c031a968   VPIFDisplayClkedgeModeSelect
+c031ae2c   VPIFDisplayClkenDisable
+c031ade0   VPIFDisplayClkenEnable
+c031b5f8   VPIFDisplayFBConfig
+c031b744   VPIFDisplayFBExchange
+c031ad38   VPIFDisplayFidModeRead
+c031aacc   VPIFDisplayFieldframeModeSelect
+c031aca4   VPIFDisplayHancDisable
+c031ac60   VPIFDisplayHancEnable
+c031ace8   VPIFDisplayIntframeConfig
+c031aaf8   VPIFDisplayIntrprogModeSelect
+c031b4cc   VPIFDisplayModeConfig
+c031ab90   VPIFDisplayPixelDisable
+c031ab4c   VPIFDisplayPixelEnable
+c031af14   VPIFDisplayVBIFBConfig
+c031b08c   VPIFDisplayVBIFBExchange
+c031b294   VPIFDisplayVBIFBSizeConfig
+c031ac18   VPIFDisplayVancDisable
+c031abd4   VPIFDisplayVancEnable
+c031ad8c   VPIFDisplayYcmuxModeSelect
+c0319d68   VPIFEmulationControlSet
+c0319d30   VPIFErrorStatus
+c0319d04   VPIFErrorStatusClear
+c0319c2c   VPIFInterruptDisable
+c0319c00   VPIFInterruptEnable
+c0319c88   VPIFInterruptEnableClear
+c0319c58   VPIFInterruptEnableSet
+c0319ce4   VPIFInterruptStatus
+c0319cb4   VPIFInterruptStatusClear
+c0323dc0   VPIFPinMuxSetup
+c03bd1ac   __TI_CINIT_Base
+c03bd1dc   __TI_CINIT_Limit
+c03bd190   __TI_Handler_Table_Base
+c03bd19c   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+c03258e0   __TI_STACK_END
+00001000   __TI_STACK_SIZE
+c0319b0c   __TI_STATIC_BASE
+00001000   __TI_SYSMEM_SIZE
+UNDEFED    __TI_TLS_INIT_Base
+UNDEFED    __TI_TLS_INIT_Limit
+00000001   __TI_args_main
+c0324700   __TI_cpp_init
+c03248a0   __TI_decompress_none
+c03248c0   __TI_decompress_rle24
+c0319af4   __TI_enable_exit_profile_output
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+c03241e0   __TI_tls_init
+c0323ec0   __TI_zero_init
+ffffffff   __binit__
+c0321220   __c6xabi_divd
+c0322a80   __c6xabi_divf
+c0323320   __c6xabi_divi
+c0323fa0   __c6xabi_divu
+c0324820   __c6xabi_errno_addr
+c0324760   __c6xabi_frcmpyd_div
+c03247a0   __c6xabi_llshru
+c0324060   __c6xabi_remi
+c03242a0   __c6xabi_remu
+c0324840   __c6xabi_trunc
+ffffffff   __c_args__
+c0323320   __divi
+c0323fa0   __divu
+c0319744   __errno
+c0324060   __remi
+c03242a0   __remu
+c03247e0   _args_main
+c0323bc0   _auto_init_elf
+c031c8f4   _c674x_mask_int10_isr
+c031cab4   _c674x_mask_int11_isr
+c031cc74   _c674x_mask_int12_isr
+c031ce34   _c674x_mask_int13_isr
+c031cff4   _c674x_mask_int14_isr
+c031d1b4   _c674x_mask_int15_isr
+c031be74   _c674x_mask_int4_isr
+c031c034   _c674x_mask_int5_isr
+c031c1f4   _c674x_mask_int6_isr
+c031c3b4   _c674x_mask_int7_isr
+c031c574   _c674x_mask_int8_isr
+c031c734   _c674x_mask_int9_isr
+c031b940   _c674x_nmi_isr
+c031baf4   _c674x_rsvd_int2_isr
+c031bcb4   _c674x_rsvd_int3_isr
+c0326c00   _c_int00
+c0319aec   _cleanup_ptr
+c0319af0   _dtors_ptr
+c0323400   _intcVectorTable
+c0319b04   _lock
+c0324340   _minit
+c0324860   _nop
+c03248e0   _stack
+c03258e0   _sys_memory
+c0319b08   _unlock
+c0324880   abort
+c0319a90   b1
+c0319ae0   b2
+ffffffff   binit
+c0157208   buff_chroma
+c00ab900   buff_chroma1
+c0101580   buff_chroma2
+c0157200   buff_luma
+c0000000   buff_luma1
+c0055c80   buff_luma2
+c0319b10   buffcount
+c0319b74   buffcount2
+c031ddcc   canVisit
+c0319b18   captured
+c031ebe0   cbcr422sp_to_rgb565_c
+c03268e0   ccCoeff
+c0319b1c   changed
+c031dd68   clearFiltered
+c0323cc0   copy_in
+c031d380   createQueue
+c0319b60   dataIdx
+c031d46c   dequeue
+c0319b14   display_buff_1
+c03198c0   eight
+c031d40c   enqueue
+c0319744   errno
+c0324120   exit
+c0322d00   exp
+c031e030   extractFeatures
+c03198e8   five
+c0319910   four
+c031d4d8   front
+c0319748   gain
+c0319b70   i
+c031d3f0   isEmpty
+c031d3d0   isFull
+c0283290   layer1
+c02832b0   layer2
+c0323780   ldexp
+c031d56c   main
+c0323900   malloc
+c0319b88   max_i_1
+c0319b98   max_i_2
+c0319b90   max_j_1
+c0319ba0   max_j_2
+c0319b5c   max_thresh
+c03243e0   memcpy
+c0319b8c   min_i_1
+c0319b9c   min_i_2
+c0319b94   min_j_1
+c0319ba4   min_j_2
+c0319b58   min_thresh
+c0324520   modf
+c031e2d4   neuralNetwork
+c0319938   nine
+c0319960   one
+c02832c0   output_p1
+c02832d0   output_p2
+c0319b4c   p1_color
+c0319788   p1_features
+c0283530   p1_filtered
+c0319b28   p1_score
+c0319b50   p2_color
+c03197c8   p2_features
+c02a8d30   p2_filtered
+c0319b2c   p2_score
+c0319b0c   pingpong
+c02ce530   player1
+c02f3d30   player2
+c0319b68   player_height
+c0319b6c   player_width
+c0319b44   prev_res_p1
+c0319b48   prev_res_p2
+c0319b24   processed
+c0319bb8   queue
+c0326c80   queue_arr
+c031d508   rear
+c031d534   resetQueue
+c0319b3c   result_p1
+c0319b40   result_p2
+c0319bbc   savedBase
+c0319bb0   score_disp_p1
+c0319bb4   score_disp_p2
+c0319988   seven
+c031e268   sigmoid
+c03199b0   six
+c0319b54   skin_color
+c0283520   slaveData
+c03199d8   three
+c0319a00   two
+c0319b64   txCompFlag
+c031e5c0   updateDisplayRPS
+c031e620   updateDisplayScore
+c0319b20   updated
+c0319b7c   videoTopC
+c0319b80   videoTopRgb1
+c0319b84   videoTopRgb2
+c0319b78   videoTopY
+c0319b30   wait
+c0319808   xoffset
+c0283250   y
+c0319b38   ymin
+c0319a28   zero
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00001000   __TI_STACK_SIZE
+00001000   __TI_SYSMEM_SIZE
+c0000000   buff_luma1
+c0055c80   buff_luma2
+c00ab900   buff_chroma1
+c0101580   buff_chroma2
+c0157200   buff_luma
+c0157208   buff_chroma
+c0157210   Rgb_buffer1
+c01ed230   Rgb_buffer2
+c0283250   y
+c0283290   layer1
+c02832b0   layer2
+c02832c0   output_p1
+c02832d0   output_p2
+c0283520   slaveData
+c0283530   p1_filtered
+c02a8d30   p2_filtered
+c02ce530   player1
+c02f3d30   player2
+c0319530   IW1_1
+c03196f0   LW2_1
+c0319744   __errno
+c0319744   errno
+c0319748   gain
+c0319788   p1_features
+c03197c8   p2_features
+c0319808   xoffset
+c0319848   P
+c0319870   R
+c0319898   S
+c03198c0   eight
+c03198e8   five
+c0319910   four
+c0319938   nine
+c0319960   one
+c0319988   seven
+c03199b0   six
+c03199d8   three
+c0319a00   two
+c0319a28   zero
+c0319a90   b1
+c0319ae0   b2
+c0319aec   _cleanup_ptr
+c0319af0   _dtors_ptr
+c0319af4   __TI_enable_exit_profile_output
+c0319b04   _lock
+c0319b08   _unlock
+c0319b0c   __TI_STATIC_BASE
+c0319b0c   pingpong
+c0319b10   buffcount
+c0319b14   display_buff_1
+c0319b18   captured
+c0319b1c   changed
+c0319b20   updated
+c0319b24   processed
+c0319b28   p1_score
+c0319b2c   p2_score
+c0319b30   wait
+c0319b34   SWITCH
+c0319b38   ymin
+c0319b3c   result_p1
+c0319b40   result_p2
+c0319b44   prev_res_p1
+c0319b48   prev_res_p2
+c0319b4c   p1_color
+c0319b50   p2_color
+c0319b54   skin_color
+c0319b58   min_thresh
+c0319b5c   max_thresh
+c0319b60   dataIdx
+c0319b64   txCompFlag
+c0319b68   player_height
+c0319b6c   player_width
+c0319b70   i
+c0319b74   buffcount2
+c0319b78   videoTopY
+c0319b7c   videoTopC
+c0319b80   videoTopRgb1
+c0319b84   videoTopRgb2
+c0319b88   max_i_1
+c0319b8c   min_i_1
+c0319b90   max_j_1
+c0319b94   min_j_1
+c0319b98   max_i_2
+c0319b9c   min_i_2
+c0319ba0   max_j_2
+c0319ba4   min_j_2
+c0319ba8   RPS_disp_p1
+c0319bac   RPS_disp_p2
+c0319bb0   score_disp_p1
+c0319bb4   score_disp_p2
+c0319bb8   queue
+c0319bbc   savedBase
+c0319c00   VPIFInterruptEnable
+c0319c2c   VPIFInterruptDisable
+c0319c58   VPIFInterruptEnableSet
+c0319c88   VPIFInterruptEnableClear
+c0319cb4   VPIFInterruptStatusClear
+c0319ce4   VPIFInterruptStatus
+c0319d04   VPIFErrorStatusClear
+c0319d30   VPIFErrorStatus
+c0319d50   VPIFDMARequestSizeConfig
+c0319d68   VPIFEmulationControlSet
+c0319d80   VPIFCaptureClkedgeModeSelect
+c0319dd0   VPIFCaptureRawDatawidthConfig
+c0319e00   VPIFCaptureRawIntlineConfig
+c0319e40   VPIFCaptureRawFidinvSet
+c0319e6c   VPIFCaptureRawVvinvSet
+c0319e98   VPIFCaptureRawHvinvSet
+c0319ec8   VPIFCaptureFieldframeModeSelect
+c0319ef4   VPIFCaptureIntrprogModeSelect
+c0319f48   VPIFCaptureVancEnable
+c0319f80   VPIFCaptureVancDisable
+c0319fb4   VPIFCaptureHancEnable
+c0319fec   VPIFCaptureHancDisable
+c031a024   VPIFCaptureIntframeConfig
+c031a074   VPIFCaptureFidModeRead
+c031a0cc   VPIFCaptureYcmuxModeSelect
+c031a120   VPIFCaptureCapmodeModeSelect
+c031a170   VPIFCaptureChanenEnable
+c031a1b0   VPIFCaptureChanenDisable
+c031a1f0   VPIFCaptureVBIFBConfig
+c031a358   VPIFCaptureVBIFBExchange
+c031a540   VPIFCaptureModeConfig
+c031a660   VPIFCaptureFBConfig
+c031a7a4   VPIFCaptureFBExchange
+c031a968   VPIFDisplayClkedgeModeSelect
+c031a9b8   VPIFDisplayClipancEnable
+c031aa00   VPIFDisplayClipancDisable
+c031aa44   VPIFDisplayClipvidEnable
+c031aa88   VPIFDisplayClipvidDisable
+c031aacc   VPIFDisplayFieldframeModeSelect
+c031aaf8   VPIFDisplayIntrprogModeSelect
+c031ab4c   VPIFDisplayPixelEnable
+c031ab90   VPIFDisplayPixelDisable
+c031abd4   VPIFDisplayVancEnable
+c031ac18   VPIFDisplayVancDisable
+c031ac60   VPIFDisplayHancEnable
+c031aca4   VPIFDisplayHancDisable
+c031ace8   VPIFDisplayIntframeConfig
+c031ad38   VPIFDisplayFidModeRead
+c031ad8c   VPIFDisplayYcmuxModeSelect
+c031ade0   VPIFDisplayClkenEnable
+c031ae2c   VPIFDisplayClkenDisable
+c031ae78   VPIFDisplayChanenEnable
+c031aec8   VPIFDisplayChanenDisable
+c031af14   VPIFDisplayVBIFBConfig
+c031b08c   VPIFDisplayVBIFBExchange
+c031b294   VPIFDisplayVBIFBSizeConfig
+c031b4cc   VPIFDisplayModeConfig
+c031b5f8   VPIFDisplayFBConfig
+c031b744   VPIFDisplayFBExchange
+c031b940   _c674x_nmi_isr
+c031baf4   _c674x_rsvd_int2_isr
+c031bcb4   _c674x_rsvd_int3_isr
+c031be74   _c674x_mask_int4_isr
+c031c034   _c674x_mask_int5_isr
+c031c1f4   _c674x_mask_int6_isr
+c031c3b4   _c674x_mask_int7_isr
+c031c574   _c674x_mask_int8_isr
+c031c734   _c674x_mask_int9_isr
+c031c8f4   _c674x_mask_int10_isr
+c031cab4   _c674x_mask_int11_isr
+c031cc74   _c674x_mask_int12_isr
+c031ce34   _c674x_mask_int13_isr
+c031cff4   _c674x_mask_int14_isr
+c031d1b4   _c674x_mask_int15_isr
+c031d380   createQueue
+c031d3d0   isFull
+c031d3f0   isEmpty
+c031d40c   enqueue
+c031d46c   dequeue
+c031d4d8   front
+c031d508   rear
+c031d534   resetQueue
+c031d56c   main
+c031dd68   clearFiltered
+c031ddcc   canVisit
+c031de58   BFS
+c031e030   extractFeatures
+c031e268   sigmoid
+c031e2d4   neuralNetwork
+c031e5c0   updateDisplayRPS
+c031e620   updateDisplayScore
+c031ebe0   cbcr422sp_to_rgb565_c
+c031fe60   RasterClkConfig
+c031fea0   RasterIdGet
+c031feb4   RasterAutoUnderFlowEnable
+c031fed4   RasterAutoUnderFlowDisable
+c031fef4   RasterEnable
+c031ff18   RasterDisable
+c031ff40   RasterModeConfig
+c031ffe0   RasterLSBDataOrderSelect
+c0320000   RasterMSBDataOrderSelect
+c0320020   RasterIntEnable
+c0320088   RasterIntDisable
+c03200e0   RasterNibbleModeEnable
+c0320100   RasterNibbleModeDisable
+c0320120   RasterFIFODMADelayConfig
+c0320168   RasterHparamConfig
+c0320244   RasterVparamConfig
+c0320334   RasterTiming2Configure
+c03203a8   RasterDMAConfig
+c03203e4   RasterByteSwapEnable
+c0320408   RasterByteSwapDisable
+c032042c   RasterEndOfFrameIntEnable
+c0320450   RasterEndOfFrameIntDisable
+c0320474   RasterIntStatus
+c03204d4   RasterIntRawStatus
+c0320520   RasterIntRawStatusSet
+c032054c   RasterDMAFBConfig
+c0320594   RasterClearGetIntStatus
+c032060c   RasterSubPanelEnable
+c032062c   RasterSubPanelDisable
+c0320650   RasterSubPanelConfig
+c03207f4   RasterClocksEnable
+c0320810   RasterSoftWareClkEnable
+c0320834   RasterSoftWareClkDisable
+c0320858   RasterDMASoftWareClkEnable
+c0320880   RasterDMASoftWareClkDisable
+c03208a4   RasterSoftWareResetControlEnable
+c0320914   RasterSoftWareResetControlDisable
+c0320988   RasterEndOfInterrupt
+c03209a4   RasterDmaMasterPrioritySet
+c03209c0   RasterStandbyModeConfig
+c0320a04   RasterIdleModeConfig
+c0320a48   RasterContextSave
+c0320b30   RasterContextRestore
+c0320c40   IntDSPINTCInit
+c0320cb0   IntRegister
+c0320cd4   IntUnRegister
+c0320cfc   IntEventMap
+c0320d84   IntEventSet
+c0320db8   IntEventClear
+c0320df0   IntEventCombineInit
+c0320ef4   IntEventCombineAdd
+c0320f48   IntEventCombineRemove
+c0320f98   IntEventCombineRegister
+c0320fc0   IntEnable
+c0320ff0   IntDisable
+c0321024   IntReset
+c0321038   IntGlobalEnable
+c032104c   IntGlobalDisable
+c0321060   IntGlobalRestore
+c0321078   ExcGlobalEnable
+c0321098   ExcCombineAdd
+c03210e0   ExcCombineRemove
+c0321220   __c6xabi_divd
+c03217c0   GPIODirModeSet
+c0321858   GPIODirModeGet
+c03218b8   GPIOPinWrite
+c0321938   GPIOPinRead
+c0321998   GPIOIntTypeSet
+c0321b04   GPIOIntTypeGet
+c0321b8c   GPIOPinIntStatus
+c0321bec   GPIOPinIntClear
+c0321c34   GPIOBankIntEnable
+c0321c64   GPIOBankIntDisable
+c0321c90   GPIOBankPinsWrite
+c0321d40   I2CMasterInitExpClk
+c0321de0   I2CMasterEnable
+c0321e18   I2CMasterDisable
+c0321e38   I2CMasterIntEnableEx
+c0321e60   I2CSlaveIntEnableEx
+c0321e84   I2CMasterIntDisableEx
+c0321ea8   I2CSlaveIntDisableEx
+c0321ecc   I2CMasterIntStatus
+c0321ee8   I2CSlaveIntStatus
+c0321f04   I2CSlaveIntStatusEx
+c0321f24   I2CMasterIntClearEx
+c0321f38   I2CSlaveIntClearEx
+c0321f50   I2CMasterSlaveAddrSet
+c0321f68   I2CMasterBusBusy
+c0321f8c   I2CMasterIsBusy
+c0321fb0   I2CMasterControl
+c0321fd8   I2CMasterStart
+c0321ff8   I2CMasterStop
+c0322018   I2CStatusClear
+c0322030   I2CMasterErr
+c0322058   I2CMasterDataPut
+c0322080   I2CMasterDataGet
+c0322098   I2CSlaveDataPut
+c03220c0   I2CSlaveDataGet
+c03220d8   I2CSetDataCount
+c03220f0   I2COwnAddressSet
+c0322108   I2CInterruptVectorGet
+c0322124   I2CSlaveAddressGet
+c0322140   I2CDMATxRxEventDisable
+c0322154   I2CDMATxEventEnable
+c0322178   I2CDMARxEventEnable
+c03221a0   I2CDMATxEventDisable
+c03221c4   I2CDMARxEventDisable
+c0322238   I2CCodecIfInit
+c0322488   CodecRegWrite
+c03224cc   CodecRegWrite3
+c0322520   CodecRegRead
+c0322568   CodecRegBitSet
+c03225e0   CodecRegBitClr
+c03227e8   CacheEnable
+c03228c8   CacheEnableMAR
+c0322960   CacheDisableMAR
+c03229ec   CacheInvL1pAll
+c03229f8   CacheWBAll
+c0322a08   CacheWBInvAll
+c0322a14   CacheInv
+c0322a30   CacheWB
+c0322a4c   CacheWBInv
+c0322a80   __c6xabi_divf
+c0322d00   exp
+c0322f40   LCDPinMuxSetup
+c0323034   ConfigRasterGpioPins
+c0323088   ConfigRasterDisplayEnable
+c032316c   LCDVersionGet
+c03231a8   TVP5147CompositeInit
+c0323288   TVP5147SVideoInit
+c0323320   __c6xabi_divi
+c0323320   __divi
+c0323400   _intcVectorTable
+c0323780   ldexp
+c0323900   malloc
+c0323a80   PSCModuleControl
+c0323bc0   _auto_init_elf
+c0323cc0   copy_in
+c0323dc0   VPIFPinMuxSetup
+c0323ec0   __TI_zero_init
+c0323fa0   __c6xabi_divu
+c0323fa0   __divu
+c0324060   __c6xabi_remi
+c0324060   __remi
+c0324120   exit
+c03241e0   __TI_tls_init
+c03242a0   __c6xabi_remu
+c03242a0   __remu
+c0324340   _minit
+c03243e0   memcpy
+c0324520   modf
+c0324660   I2CPinMuxSetup
+c0324700   __TI_cpp_init
+c0324760   __c6xabi_frcmpyd_div
+c03247a0   __c6xabi_llshru
+c03247e0   _args_main
+c0324820   __c6xabi_errno_addr
+c0324840   __c6xabi_trunc
+c0324860   _nop
+c0324880   C$$EXIT
+c0324880   abort
+c03248a0   __TI_decompress_none
+c03248c0   __TI_decompress_rle24
+c03248e0   _stack
+c03258e0   __TI_STACK_END
+c03258e0   _sys_memory
+c03268e0   ccCoeff
+c0326c00   _c_int00
+c0326c80   queue_arr
+c03bd190   __TI_Handler_Table_Base
+c03bd19c   __TI_Handler_Table_Limit
+c03bd1ac   __TI_CINIT_Base
+c03bd1dc   __TI_CINIT_Limit
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+UNDEFED    __TI_TLS_INIT_Base
+UNDEFED    __TI_TLS_INIT_Limit
+
+[370 symbols]
