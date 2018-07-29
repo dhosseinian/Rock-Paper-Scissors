@@ -7,4 +7,4 @@ This project can detect hand symbols of between two players simultaneously from 
 ## Implementation
 ![alt text][pipeline]
 
-[pipeline]: pipeline.jpg
+[pipeline]: pipeline.png
