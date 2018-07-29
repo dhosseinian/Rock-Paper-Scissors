@@ -8,3 +8,6 @@ This project can detect hand symbols of between two players simultaneously from 
 ![alt text][pipeline]
 
 [pipeline]: pipeline.png
+
+## Video Demo
+![Video](https://img.youtube.com/vi/NvAWEgTGzkg/0.jpg)](http://www.youtube.com/watch?v=NvAWEgTGzkg)
